@@ -15,7 +15,8 @@ import org.junit.internal.AssumptionViolatedException;
 import org.junit.rules.MethodRule;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.Statement;
-import org.springframework.boot.test.TestRestTemplate;
+//import org.springframework.boot.test.TestRestTemplate;
+import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -289,8 +290,8 @@ public class ServerRunning implements MethodRule, RestTemplateHolder {
 	}
 
 	public RestOperations createRestTemplate() {
-		RestTemplate client = new TestRestTemplate();
-		return client;
+		TestRestTemplate client = new TestRestTemplate();
+		return client.getRestTemplate();
 	}
 
 	public UriBuilder buildUri(String url) {

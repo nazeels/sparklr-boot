@@ -10,7 +10,11 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+//import org.springframework.boot.test.SpringApplicationConfiguration;
+//import org.springframework.boot.test.SpringApplicationConfiguration;
+//import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -23,6 +27,8 @@ import org.springframework.security.oauth2.client.token.grant.password.ResourceO
 import org.springframework.security.oauth2.client.token.grant.password.ResourceOwnerPasswordResourceDetails;
 import org.springframework.security.oauth2.common.AuthenticationScheme;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.web.client.DefaultResponseErrorHandler;
 import org.springframework.web.client.HttpClientErrorException;
@@ -33,7 +39,10 @@ import org.springframework.web.client.ResponseExtractor;
  * @author Ryan Heaton
  * @author Dave Syer
  */
-@SpringApplicationConfiguration(classes=Application.class)
+//@SpringApplicationConfiguration(classes=Application.class)
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = Application.class)
+@WebAppConfiguration
 public class ResourceOwnerPasswordProviderTests extends AbstractIntegrationTests {
 
 	private ClientHttpResponse tokenEndpointResponse;

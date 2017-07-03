@@ -23,7 +23,8 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import org.junit.Test;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+//import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -54,7 +55,8 @@ import demo.ServerRunning.UriBuilder;
  * @author Dave Syer
  * @author Luke Taylor
  */
-@SpringApplicationConfiguration(classes = Application.class)
+//@SpringApplicationConfiguration(classes = Application.class)
+@SpringBootTest(classes = Application.class)
 public class AuthorizationCodeProviderTests extends AbstractIntegrationTests {
 
 	private AuthorizationCodeAccessTokenProvider accessTokenProvider;

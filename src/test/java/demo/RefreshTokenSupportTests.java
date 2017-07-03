@@ -8,7 +8,8 @@ import static org.junit.Assert.assertTrue;
 import java.util.Map;
 
 import org.junit.Test;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+//import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ import org.springframework.util.MultiValueMap;
  * @author Ryan Heaton
  * @author Dave Syer
  */
-@SpringApplicationConfiguration(classes=Application.class)
+@SpringBootTest(classes=Application.class)
 public class RefreshTokenSupportTests extends AbstractIntegrationTests {
 
 	/**

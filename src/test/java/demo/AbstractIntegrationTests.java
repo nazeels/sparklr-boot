@@ -24,8 +24,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.embedded.EmbeddedWebApplicationContext;
-import org.springframework.boot.test.IntegrationTest;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+//import org.springframework.boot.test.IntegrationTest;
+//import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.security.oauth2.client.resource.BaseOAuth2ProtectedResourceDetails;
@@ -36,14 +37,19 @@ import org.springframework.security.oauth2.client.token.grant.redirect.AbstractR
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import demo.AbstractIntegrationTests.TestConfiguration;
 
-@SpringApplicationConfiguration(classes = TestConfiguration.class, inheritLocations = true)
+//@SpringApplicationConfiguration(classes = TestConfiguration.class, inheritLocations = true)
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@WebAppConfiguration
+//@IntegrationTest
 @RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest(classes = Application.class)
 @WebAppConfiguration
-@IntegrationTest
+
 public abstract class AbstractIntegrationTests {
 
 	@Value("${local.server.port}")

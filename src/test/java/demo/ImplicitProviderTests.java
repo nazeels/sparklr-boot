@@ -4,19 +4,26 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 
 import org.junit.Test;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+//import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.crypto.codec.Base64;
 import org.springframework.security.oauth2.client.resource.UserRedirectRequiredException;
 import org.springframework.security.oauth2.client.test.OAuth2ContextConfiguration;
 import org.springframework.security.oauth2.client.token.grant.implicit.ImplicitResourceDetails;
 import org.springframework.security.oauth2.common.util.OAuth2Utils;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 
 /**
  * @author Ryan Heaton
  * @author Dave Syer
  */
-@SpringApplicationConfiguration(classes=Application.class)
+//@SpringApplicationConfiguration(classes=Application.class
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = Application.class)
+@WebAppConfiguration
 public class ImplicitProviderTests extends AbstractIntegrationTests {
 
 	@Test
